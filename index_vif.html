@@ -13,8 +13,8 @@
     <button @click="putOnList()">ajouter à la liste</button>
     <p v-if="filmList.length == 0">Pas encore de film dans votre liste</p>
     <ul v-else>
-        <li v-for="film in filmList">
-            {{film}}
+        <li @click="emptyList(filmList,index)" v-for="(film,index) in filmList">
+            {{index}}-{{film}}
         </li>
 
     </ul>

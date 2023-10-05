@@ -19,9 +19,15 @@ Vue.createApp({
                 return false;
             }
         },
+        emptyList(tab,index){
+             tab.splice( index, 1);
+            // tab[index] = "";
+            // index="";
+            // index.style.display="none";
+        },
         putOnList(){
             this.filmList.push(this.film);
-
+            this.film="";
         },
         affichageFilm(){
             this.filmList.forEach(element => {
