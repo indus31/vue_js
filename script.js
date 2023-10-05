@@ -3,25 +3,48 @@ Vue.createApp({
     //! Toutes les data seront contenues dans this
     data() {
         return {
-        nombre: 0
+        nombre: 0,
+        randomString : "",
+        test : "hello world",
+        userName:""
+        
         
     };
     },
     //! Dans cet Object methods, on va écrire nos fonctions
     methods: {
-        
-        plusDix(param){
-            
-            return this.nombre += param;
+        updateUser(){
+            console.log("fonctions exécutée");
+            if(this.userName = ""){
+                this.userName = "test";
+                 
+            }else{
+                this.userName = "un autre test";
+               
+            }
         },
-        moinsDix(param){
-            return this.nombre -= param;
+        capterEventInput(event){
+            
+            this.randomString = event.target.value; 
+        },
+        capterEventKeyup(event){
+            this.test = event.target.value;
+        },
+
+        message(){
+            alert("alerte !!");
+        },
+        plusDix(){  
+             this.nombre += 10;
+        },
+        moinsDix(){
+             this.nombre -= 10;
 
         },
         exemple(){
             let randomInt = Math.random();
             if(randomInt> 0.5){
-               return "blala";
+                return "blala";
             }else{
                 return "titit";
                 

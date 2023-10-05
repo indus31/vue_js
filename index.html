@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS v5.2.0-beta1 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
-  <body>
+  <body id="app">
     <style>
       .red{
         background-color: red;
@@ -22,12 +22,22 @@
       }
       
     </style>
-    <div id="app" class="flex">
-      <button v-on:click="nombre -=10" class="red"> - </button>
+    <div  class="flex">
+      <button v-on:click="moinsDix()" class="red"> - </button>
       <p>le nombre : {{nombre}}</p>
-      <button @click="nombre +=10" class="green"> + </button>
+      <button @click="plusDix()" class="green"> + </button>
+
+      <p>{{updateUser()}}</p>
+      
 
     </div>
+    
+    <input v-on:input="capterEventInput($event)" type="text" value="">
+    <p >{{randomString}}</p>
+    <input v-on:keyup.esc = "capterEventKeyup($event)" type="text" name="" id="">
+    <p >{{test}}</p>
+    <button v-on:click ="message">alerte</button>
+
     <script src="https://unpkg.com/vue@next"></script>
     <script src="script.js"></script>
     <!-- Bootstrap JavaScript Libraries -->

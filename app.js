@@ -25,6 +25,7 @@ data() {
 },
 //! Dans cet Object methods, on va écrire nos fonctions
 methods: {
+    
     agePlusDix(){
         return this.ageUser + 10;
     },
